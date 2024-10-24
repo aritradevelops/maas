@@ -1,0 +1,16 @@
+model Cat {
+  id          String      @id @default(cuid())
+  name        String
+  breed       String
+  image       String
+  personality Personality
+  owner_id    String
+}
+
+enum Personality {
+  PLAYFUL
+  CURIOUS
+  SLEEPY
+  MYSTERIOUS
+  FRIENDLY
+}
