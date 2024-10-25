@@ -13,36 +13,49 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is this template free?",
-    answer: "Yes. It is a free ChadcnUI template.",
-    value: "item-1",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    question: "What is Meow as a Service (MasS)?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      "MasS is your one-stop service for all things cat! From adorable meows to feline facts, we have it all.",
     value: "item-2",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet  Consectetur natus dolores minus quibusdam?",
+    question: "Can I upload pictures of my cat?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis necessitatibus maxime quis ipsa vitae cumque quo?",
+      "Absolutely! We love seeing new furry friends on the platform. The more the meow-rier!",
     value: "item-3",
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    question: "How many meows can I request per day?",
+    answer:
+      "As many as your heart desires! We have an infinite supply of meows ready to brighten your day.",
     value: "item-4",
   },
   {
-    question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus?",
+    question: "Will this make my cat jealous?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      "Possibly. Cats are known for their diva behavior, so be sure to give your feline friend plenty of attention after using MasS!",
     value: "item-5",
   },
+  {
+    question: "Does MasS work with dogs?",
+    answer:
+      "MasS is strictly for cat lovers. We suggest our bark-loving friends look elsewhere for their canine needs!",
+    value: "item-6",
+  },
+  {
+    question: "What if I don’t have a cat?",
+    answer:
+      "No worries! You can still enjoy the cuteness and chaos of cats through MasS, even if you're not a cat parent.",
+    value: "item-7",
+  },
+  {
+    question: "Can MasS translate my cat's meows?",
+    answer:
+      "While we're working on that feature, for now, just know that every meow means 'feed me' or 'pet me.'",
+    value: "item-8",
+  },
 ];
+
 
 export const FAQ = () => {
   return (
@@ -80,7 +93,7 @@ export const FAQ = () => {
         Still have questions?{" "}
         <a
           rel="noreferrer noopener"
-          href="#"
+          href="mailto:admin@swiftgeek.dev"
           className="text-primary transition-all border-primary hover:border-b-2"
         >
           Contact us

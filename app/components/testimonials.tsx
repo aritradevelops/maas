@@ -16,48 +16,43 @@ interface TestimonialProps {
 
 const testimonials: TestimonialProps[] = [
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe",
-    comment: "This landing page is awesome!",
+    image: "/owners/1.jpg",
+    name: "Fluffy Whiskers",
+    userName: "@fluffywhiskers",
+    comment: "Purrfection! I never knew I needed this until now. 10/10 would recommend to all the cool cats.",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe1",
-    comment:
-      "Lorem ipsum dolor sit amet,empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
-  },
-
-  {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe2",
-    comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    image: "/owners/2.jpg",
+    name: "Mr. Whiskers",
+    userName: "@whisker_master",
+    comment: "Meow as a Service has revolutionized my catnip delivery schedule. No more waiting around!",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe3",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    image: "/owners/3.webp",
+    name: "Sir Pawsington",
+    userName: "@sir_paws",
+    comment: "From whiskers to tail, this service is pawsitively amazing. Never miss a cat photo update again!",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe4",
-    comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud.",
+    image: "/owners/4.webp",
+    name: "Mittens the Third",
+    userName: "@mittens3rd",
+    comment: "I signed up for the premium plan, and now I'm living the catnap dream. MasS has my paw of approval.",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe5",
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: "/owners/5.webp",
+    name: "Cleo Purrtra",
+    userName: "@queen_cleo",
+    comment: "A meow-velous service! I’ve never felt so connected to my feline friends, and they love it too.",
+  },
+  {
+    image: "/owners/6.webp",
+    name: "Kitty Stardust",
+    userName: "@space_cat",
+    comment: "One small step for meowkind, one giant leap for cat services everywhere. Purrfect innovation!",
   },
 ];
+
 
 export const Testimonials = () => {
   return (
@@ -71,12 +66,11 @@ export const Testimonials = () => {
           {" "}
           People Love{" "}
         </span>
-        This Landing Page
+        MasS
       </h2>
 
       <p className="text-xl text-muted-foreground pt-4 pb-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde error
-        facere hic reiciendis illo
+        Cats are connoisseurs of comfort.
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6">
