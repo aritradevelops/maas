@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { HeroCards } from "./hero-cards";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -27,7 +28,9 @@ export const Hero = () => {
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3">Get Started</Button>
+          <Button className="w-full md:w-1/3" asChild>
+            <Link href="/identify">Get Started</Link>
+          </Button>
 
           <a
             rel="noreferrer noopener"

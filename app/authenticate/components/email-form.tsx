@@ -1,25 +1,44 @@
 "use client"
 
 import * as React from "react"
-
+import { z } from "zod"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useAuth } from "@/contexts/auth"
+import { sendOtp } from "@/actions/authenticate"
+import { Message } from "@/components/message"
+import { userAuthSchema } from "@/schemas/authenticate"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+export function EmailForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
-
+  const [error, setError] = React.useState<string | null>(null)
+  const { setAuthState, setTemp, temp } = useAuth()
   async function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault()
-    setIsLoading(true)
-
-    setTimeout(() => {
+    try {
+      event.preventDefault()
+      setIsLoading(true)
+      setError(null)
+      const formData = new FormData(event.target as HTMLFormElement)
+      const email = formData.get("email")?.toString() || ""
+      // Validate using Zod schema
+      const validation = userAuthSchema.safeParse({ email })
+      if (!validation.success) {
+        setError(validation.error.errors[0].message)
+        setIsLoading(false)
+        return
+      }
+      const res = await sendOtp({ email })
+      setTemp({ email: validation.data.email, resendId: res.resendId! })
+      setAuthState('otp')
+    } catch (error) {
+      setError((error as Error).message)
       setIsLoading(false)
-    }, 3000)
+    }
   }
 
   return (
@@ -32,6 +51,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             </Label>
             <Input
               id="email"
+              name="email"
               placeholder="name@example.com"
               type="email"
               autoCapitalize="none"
@@ -39,33 +59,18 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCorrect="off"
               disabled={isLoading}
             />
+            {error && (
+              <Message variant={'error'} message={error} />
+            )}
           </div>
           <Button disabled={isLoading}>
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            Sign In with Email
+            Send Otp
           </Button>
         </div>
       </form>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
-        </div>
-      </div>
-      <Button variant="outline" type="button" disabled={isLoading}>
-        {isLoading ? (
-          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-        ) : (
-          <Icons.gitHub className="mr-2 h-4 w-4" />
-        )}{" "}
-        GitHub
-      </Button>
     </div>
   )
 }
