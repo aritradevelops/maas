@@ -8,7 +8,6 @@ import { Hero } from "./components/hero";
 import { Navbar } from "./components/nav-bar";
 import { ScrollToTop } from "./components/scroll-to-top";
 import { Testimonials } from "./components/testimonials";
-
 export default function Home() {
   return (
     <div>
