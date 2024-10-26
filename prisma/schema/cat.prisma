@@ -5,12 +5,19 @@ model Cat {
   image       String
   personality Personality
   owner_id    String
+  created_at  DateTime    @default(now())
+  updated_at  DateTime    @updatedAt
 }
 
 enum Personality {
-  PLAYFUL
-  CURIOUS
-  SLEEPY
-  MYSTERIOUS
-  FRIENDLY
+  Playful
+  Calm
+  Bold
+  Affectionate
+  Energetic
+  Gentle
+  Curious
+  Confident
+  Friendly
+  Mysterious
 }
