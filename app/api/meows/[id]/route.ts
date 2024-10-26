@@ -1,5 +1,6 @@
 import prisma from "@/lib/db";
-import { catchGeneric, getScopeQuery } from "@/lib/utils";
+import { catchGeneric } from "@/lib/server-utils";
+import { getScopeQuery } from "@/lib/utils";
 import { NextRequest, NextResponse } from "next/server";
 
 interface Params {
