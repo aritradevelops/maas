@@ -3,4 +3,5 @@ model User {
   email      String   @unique
   otp        Int
   otp_expiry DateTime
+  keys       String[] @default([])
 }
