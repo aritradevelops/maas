@@ -46,7 +46,7 @@ const data = {
     },
     {
       title: "Gallery",
-      url: "/gallery",
+      url: "/dashboard/gallery",
       icon: File,
     },
     {
