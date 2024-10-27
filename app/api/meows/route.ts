@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
     // TODO: validation
     const search = query.q || '';
     const page = query.page ? Number(query.page) : 1;
-    const limit = query.limit ? Number(query.limit) : 1;
+    const limit = query.limit ? Number(query.limit) : 10;
     const offset = (page - 1) * limit;
     const filter = (query.filter as object) || {};
     const sort = query.sort || 'created_at';
