@@ -17,7 +17,6 @@ export async function catchGeneric(error: unknown) {
       case 'P2025':
         return NextResponse.json({ message: "The requested resource could not be found!", error: error.message }, { status: 404 })
       default: {
-        console.log("sjdkhajskdl", error.code)
         return NextResponse.json({ message: "Something went wrong with this request, please try again later!", error: error.message }, { status: 404 });
       }
     }

@@ -20,7 +20,6 @@ export async function GET(req: NextRequest) {
     const select = query.select || 'name,id,breed';
     const scope = req.headers.get('x-api-scope') as 'all' | 'owner';
     const requester = req.headers.get('x-api-user') as string;
-
     const selectQuery = (select as string).split(',').reduce(
       (final, curr) => {
         final[curr as keyof Cat] = true;

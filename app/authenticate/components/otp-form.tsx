@@ -37,7 +37,6 @@ export function OtpForm({ className, ...props }: OtpFormProps) {
       // Validate using Zod schema
       const validation = verifyOtpSchema.safeParse({ email: temp?.email, otp: otpVal })
       if (!validation.success) {
-        console.log(validation.error.flatten())
         setError(validation.error.flatten().fieldErrors.otp?.[0]!)
         setIsLoading(false)
         return

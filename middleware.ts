@@ -1,7 +1,9 @@
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
+import { verifyKey } from '@unkey/api';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-const module = 'meows'
+import { rateLimiter, UNKEY_API_ID } from './lib/unkey';
+const module = 'cat'
 const getAction = (method: 'GET' | 'POST' | 'PUT' | 'DELETE', withId = false) => {
   switch (method) {
     case 'GET':
@@ -16,16 +18,17 @@ const getAction = (method: 'GET' | 'POST' | 'PUT' | 'DELETE', withId = false) =>
       throw new Error(`Invalid method ${method}`)
   }
 }
-const getTokenDetails = (token: string) => {
+const getTokenDetails = async (token: string) => {
+  const { result, error } = await verifyKey({ key: token, apiId: UNKEY_API_ID });
+  if (error) {
+    throw new Error(`Invalid token`)
+  }
+  if (!result.valid) {
+    throw new Error(`Invalid token`)
+  }
   return {
-    permissions: [
-      'meows~create~all',
-      'meows~view~all',
-      'meows~update~all',
-      'meows~delete~all',
-      'meows~list~all',
-    ],
-    requester: 'cm2oulkgu000012kw9cspfyy1'
+    permissions: result.permissions!,
+    requester: result.ownerId!
   }
 }
 interface Params {
@@ -33,25 +36,27 @@ interface Params {
 }
 
 
-export function middleware(req: NextRequest, context: { params?: Params }) {
+export async function middleware(req: NextRequest, context: { params?: Params }) {
   try {
     const auth = req.headers.get('Authorization') || 'Bearer ';
     const token = auth.slice(7); // remove 'Bearer ' from the beginning of the token
-    if (!token || token !== 'expected-token') {
+    if (!token) {
       return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
     }
-    const { permissions, requester } = getTokenDetails(token);
+    const { permissions, requester } = await getTokenDetails(token);
+    const ratelimit = await rateLimiter.limit(requester)
+    if (!ratelimit.success) {
+      return NextResponse.json({ message: 'Rate limit exceeded' }, { status: 429 });
+    }
     const action = getAction(req.method as 'GET' | 'POST', !!context.params?.id);
-    const foundPermission = permissions.find(permission => permission.startsWith(`${module}~${action}~`));
+    const foundPermission = permissions.find(permission => permission.startsWith(`${module}.${action}.`));
     if (!foundPermission) {
       return NextResponse.json({ message: 'Insufficient permissions' }, { status: 403 });
     }
-    const [_, __, scope] = foundPermission.split(',');
+    const [_, __, scope] = foundPermission.split('.');
     const reqHeaders = new Headers(req.headers)
     reqHeaders.set('x-api-scope', scope)
     reqHeaders.set('x-api-user', requester)
-
-
     const res = NextResponse.next({ request: { headers: reqHeaders } })
     // add the CORS headers to the response
     res.headers.append('Access-Control-Allow-Credentials', "true")

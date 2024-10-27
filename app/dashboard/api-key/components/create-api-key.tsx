@@ -16,7 +16,6 @@ export default function CreateApiKey({ user }: { user: User }) {
   const router = useRouter()
   const handleClick = async (e: SyntheticEvent) => {
     try {
-      console.log('here')
       setIsLoading(true);
       await createApiKey({ email: user.email })
       router.refresh()
