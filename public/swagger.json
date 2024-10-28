@@ -122,7 +122,7 @@
   "paths": {
     "/api/meows": {
       "get": {
-        "summary": "List Meows",
+        "summary": "List all the cats.",
         "parameters": [
           {
             "name": "q",
@@ -138,7 +138,8 @@
             "schema": {
               "type": "integer",
               "default": 1
-            }
+            },
+            "description": "Page no you want to fetch"
           },
           {
             "name": "limit",
@@ -146,7 +147,8 @@
             "schema": {
               "type": "integer",
               "default": 10
-            }
+            },
+            "description": "How many cats you want to fetch per page"
           },
           {
             "name": "filter",
@@ -154,7 +156,7 @@
             "schema": {
               "type": "object"
             },
-            "description": "Filtering options"
+            "description": "Filter for any key. E.g. { \"owner_id\": \"<your_owner_id>\" }"
           },
           {
             "name": "sort",
@@ -162,7 +164,8 @@
             "schema": {
               "type": "string",
               "default": "created_at"
-            }
+            },
+            "description": "Sort with any field you want"
           },
           {
             "name": "order",
@@ -174,7 +177,8 @@
                 "desc"
               ],
               "default": "desc"
-            }
+            },
+            "description": "The sort order with asc or desc"
           },
           {
             "name": "select",
@@ -182,7 +186,8 @@
             "schema": {
               "type": "string",
               "default": "name,id,breed"
-            }
+            },
+            "description": "Comma separated list of the fields to select"
           }
         ],
         "responses": {
@@ -216,7 +221,7 @@
         }
       },
       "post": {
-        "summary": "Create a Meow",
+        "summary": "Create a new cat",
         "requestBody": {
           "required": true,
           "content": {
@@ -231,7 +236,8 @@
                     "type": "string"
                   },
                   "image": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Image url of the cat. we will support uploading images in future versions"
                   },
                   "personality": {
                     "$ref": "#/components/schemas/Personality"
@@ -261,7 +267,7 @@
     },
     "/api/meows/{id}": {
       "get": {
-        "summary": "Get a Meow by ID",
+        "summary": "Get a cat by id.",
         "parameters": [
           {
             "name": "id",
@@ -269,7 +275,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "id of the cat."
           }
         ],
         "responses": {
@@ -288,7 +295,7 @@
         }
       },
       "put": {
-        "summary": "Update a Meow by ID",
+        "summary": "Update a Meow by id. You can only update cats that you have created.",
         "parameters": [
           {
             "name": "id",
@@ -296,7 +303,8 @@
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "id of the cat."
           }
         ],
         "requestBody": {
@@ -339,7 +347,7 @@
         }
       },
       "delete": {
-        "summary": "Delete a Meow by ID",
+        "summary": "Delete a Meow by ID.You can only delete cats that you have created.",
         "parameters": [
           {
             "name": "id",
