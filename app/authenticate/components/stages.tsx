@@ -23,7 +23,7 @@ const fadeVariants = {
 export default function Stages() {
   const { authState } = useAuth()
 
-  if (authState === 'authenticated') redirect('/dashboard')
+  if (authState === 'authenticated') redirect('/dashboard/api-key')
 
   return (
     <AnimatePresence mode="wait">
