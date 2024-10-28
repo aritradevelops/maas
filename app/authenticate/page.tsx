@@ -22,6 +22,14 @@ export default async function AuthenticationPage() {
           <div className="relative z-20 text-center font-medium pt-10">
             <h1 className="text-5xl p-3">Meowwwww!</h1>
             <h2 className="text-2xl p-2">Welcome Back!</h2>
+            <div className="w-full h-full text-center flex justify-center items-center">
+              <Image
+                src="/happy-cat.gif"
+                height={400}
+                width={400}
+                alt="happy cat"
+              />
+            </div>
           </div>
         </div>
         <div className="lg:p-8 p-4 h-screen flex flex-col justify-center">
