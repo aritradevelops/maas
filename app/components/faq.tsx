@@ -13,9 +13,9 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "What is Meow as a Service (MasS)?",
+    question: "What is Meow as a Service (MaaS)?",
     answer:
-      "MasS is your one-stop service for all things cat! From adorable meows to feline facts, we have it all.",
+      "MaaS is your one-stop service for all things cat! From adorable meows to feline facts, we have it all.",
     value: "item-2",
   },
   {
@@ -33,23 +33,23 @@ const FAQList: FAQProps[] = [
   {
     question: "Will this make my cat jealous?",
     answer:
-      "Possibly. Cats are known for their diva behavior, so be sure to give your feline friend plenty of attention after using MasS!",
+      "Possibly. Cats are known for their diva behavior, so be sure to give your feline friend plenty of attention after using MaaS!",
     value: "item-5",
   },
   {
-    question: "Does MasS work with dogs?",
+    question: "Does MaaS work with dogs?",
     answer:
-      "MasS is strictly for cat lovers. We suggest our bark-loving friends look elsewhere for their canine needs!",
+      "MaaS is strictly for cat lovers. We suggest our bark-loving friends look elsewhere for their canine needs!",
     value: "item-6",
   },
   {
     question: "What if I don’t have a cat?",
     answer:
-      "No worries! You can still enjoy the cuteness and chaos of cats through MasS, even if you're not a cat parent.",
+      "No worries! You can still enjoy the cuteness and chaos of cats through MaaS, even if you're not a cat parent.",
     value: "item-7",
   },
   {
-    question: "Can MasS translate my cat's meows?",
+    question: "Can MaaS translate my cat's meows?",
     answer:
       "While we're working on that feature, for now, just know that every meow means 'feed me' or 'pet me.'",
     value: "item-8",

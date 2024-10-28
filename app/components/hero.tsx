@@ -22,7 +22,7 @@ export const Hero = () => {
         </main>
 
         <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          The purr-fect platform for all things meows! Whether you're adding new feline friends, tweaking their profiles, or simply browsing through a list of delightful meows, this service has you covered. With MasS, managing meows has never been this easy ! Unleash the paws-ibilities and get started today!
+          The purr-fect platform for all things meows! Whether you're adding new feline friends, tweaking their profiles, or simply browsing through a list of delightful meows, this service has you covered. With MaaS, managing meows has never been this easy ! Unleash the paws-ibilities and get started today!
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
@@ -32,7 +32,7 @@ export const Hero = () => {
 
           <a
             rel="noreferrer noopener"
-            href="https://github.com/aritradevelops/mass.git"
+            href="https://github.com/aritradevelops/maas.git"
             target="_blank"
             className={`w-full md:w-1/3 ${buttonVariants({
               variant: "outline",

@@ -20,7 +20,7 @@ export default function Header() {
               width={40}
               alt="logo"
             />
-            MasS
+            MaaS
           </a>
         </SidebarMenuItem>
       </SidebarMenu>

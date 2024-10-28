@@ -30,11 +30,11 @@ export async function sendOtp({ email }: { email: string }) {
     })
   }
   const { data: resendData, error } = await resend.emails.send({
-    from: 'MasS <admin@swiftgeek.dev>',
+    from: 'MaaS <admin@swiftgeek.dev>',
     to: [user.email],
     subject: `Here\'s your PIN ${user.otp}`,
     text: `
-    Enter this 6 digit code to authenticate yourself with MasS.
+    Enter this 6 digit code to authenticate yourself with MaaS.
     Code: ${user.otp}.
     The code is only valid for 5 minutes.
     `
@@ -81,11 +81,11 @@ export async function resendOtp({ email }: { email: string }) {
     throw new Error("User not found")
   }
   const { data: resendData, error } = await resend.emails.send({
-    from: 'MasS <admin@swiftgeek.dev>',
+    from: 'MaaS <admin@swiftgeek.dev>',
     to: [user.email],
     subject: `Here\'s your PIN ${user.otp}`,
     text: `
-    Enter this 6 digit code to authenticate yourself with MasS.
+    Enter this 6 digit code to authenticate yourself with MaaS.
     Code: ${user.otp}.
     The code is only valid for 5 minutes.
     `

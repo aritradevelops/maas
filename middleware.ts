@@ -1,4 +1,3 @@
-import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 import { verifyKey } from '@unkey/api';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';

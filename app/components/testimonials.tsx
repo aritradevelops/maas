@@ -37,7 +37,7 @@ const testimonials: TestimonialProps[] = [
     image: "/owners/4.webp",
     name: "Mittens the Third",
     userName: "@mittens3rd",
-    comment: "I signed up for the premium plan, and now I'm living the catnap dream. MasS has my paw of approval.",
+    comment: "I signed up for the premium plan, and now I'm living the catnap dream. MaaS has my paw of approval.",
   },
   {
     image: "/owners/5.webp",
@@ -66,7 +66,7 @@ export const Testimonials = () => {
           {" "}
           People Love{" "}
         </span>
-        MasS
+        MaaS
       </h2>
 
       <p className="text-xl text-muted-foreground pt-4 pb-8">
