@@ -65,13 +65,13 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const requester = req.headers.get('x-api-user') as string;
-    const { name, breed, personality } = body;
+    const { name, breed, personality, image } = body;
     const newMeow = await prisma.cat.create({
       data: {
         name,
         breed,
         owner_id: requester,
-        image: '',
+        image: image,
         personality
       }
     });
