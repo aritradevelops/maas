@@ -37,7 +37,7 @@ export default async function AuthenticationPage() {
                 width={40}
                 alt="logo"
               />
-              MasS
+              MaaS
             </a>
             <ModeToggle />
           </div>
