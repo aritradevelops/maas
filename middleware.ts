@@ -56,16 +56,7 @@ export async function middleware(req: NextRequest, context: { params?: Params })
     const reqHeaders = new Headers(req.headers)
     reqHeaders.set('x-api-scope', scope)
     reqHeaders.set('x-api-user', requester)
-    const res = NextResponse.next({ request: { headers: reqHeaders } })
-    // add the CORS headers to the response
-    res.headers.append('Access-Control-Allow-Credentials', "true")
-    res.headers.append('Access-Control-Allow-Origin', '*') // replace this your actual origin
-    res.headers.append('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT')
-    res.headers.append(
-      'Access-Control-Allow-Headers',
-      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-    )
-    return res
+    return NextResponse.next({ request: { headers: reqHeaders } })
   } catch (error) {
     return NextResponse.json({ message: "Something went wrong with this request, please try again later!", data: (error as Error).message }, { status: 500 });
   }
