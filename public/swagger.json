@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://maas-alpha.vercel.app/",
+      "url": "https://maas-alpha.vercel.app/",
       "description": "Development Server"
     }
   ],
