@@ -1,7 +1,5 @@
 model User {
-  id         String   @id @default(cuid())
-  email      String   @unique
-  otp        Int
-  otp_expiry DateTime
-  keys       String[] @default([])
+  id    String   @id @default(cuid())
+  email String   @unique
+  keys  String[] @default([])
 }

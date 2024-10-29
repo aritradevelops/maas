@@ -5,6 +5,7 @@ import Stages from "./components/stages"
 import { AuthContextProvider } from "@/contexts/auth"
 import { getUser } from "@/actions/session"
 import { redirect } from "next/navigation"
+import HankoAuth from "@/components/hanko-auth"
 
 export const metadata: Metadata = {
   title: "Authentication Page",
@@ -49,9 +50,9 @@ export default async function AuthenticationPage() {
             </a>
             <ModeToggle />
           </div>
-          <AuthContextProvider>
-            <Stages />
-          </AuthContextProvider>
+          <div className="w-full h-full flex justify-center items-center">
+            <HankoAuth />
+          </div>
         </div>
       </div>
     </>

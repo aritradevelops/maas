@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { PrismaClientKnownRequestError, PrismaClientValidationError } from "@prisma/client/runtime/library";
 
 export async function catchGeneric(error: unknown) {
-  console.log(error)
+  console.error(error)
   if (error instanceof PrismaClientValidationError) {
     return NextResponse.json({ message: `The provided payload is incorrect!`, error: error.message }, { status: 400 })
   }
