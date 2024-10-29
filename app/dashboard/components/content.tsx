@@ -3,41 +3,27 @@ import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuItem,
   SidebarMenuButton,
+  SidebarMenuItem,
   SidebarMenuSub,
-  SidebarMenuSubItem,
   SidebarMenuSubButton,
+  SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
 import {
   Collapsible,
-  CollapsibleTrigger,
   CollapsibleContent,
+  CollapsibleTrigger,
 } from '@radix-ui/react-collapsible';
-import { ChevronRight, KeySquare, File, BookOpen } from 'lucide-react';
-import React from 'react';
+import { BookOpen, ChevronRight, File, KeySquare, UserPen } from 'lucide-react';
 
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  teams: [
-    {
-      name: "Acme Inc",
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      plan: "Free",
-    },
-  ],
   navMain: [
+    {
+      title: "Profile",
+      url: "/dashboard/profile",
+      icon: UserPen,
+      isActive: true,
+    },
     {
       title: "Api Key",
       url: "/dashboard/api-key",

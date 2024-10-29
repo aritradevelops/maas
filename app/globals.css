@@ -58,6 +58,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -98,7 +99,48 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+hanko-auth,
+hanko-profile {
+  --color: #333333;
+  --color-shade-1: #8f9095;
+  --color-shade-2: #e5e6ef;
+
+  --brand-color: hsl(240 10% 3.9%);
+  --brand-color-shade-1: hsl(240 3.8% 46.1%);
+  --brand-contrast-color: white;
+
+  --background-color: white;
+  --error-color: #e82020;
+  --link-color: hsl(240 3.8% 46.1%);
+}
+
+hanko-auth.dark,
+hanko-profile.dark {
+  /* Color Scheme */
+  --color: hsl(0 0% 98%);
+  --color-shade-1: #8f9095;
+  --color-shade-2: hsla(240 5.9% 10% 0.9);
+
+  --brand-color: hsl(0 0% 98%);
+  --brand-color-shade-1: hsla(0, 0%, 98%, 0.9);
+  --brand-contrast-color: hsl(240 5.9% 10%);
+
+  --background-color: hsl(240 10% 3.9%);
+  --error-color: #e82020;
+  --link-color: hsl(0 0% 98%);
+}
+
+hanko-auth::part(headline1),
+hanko-profile::part(headline1) {
+  text-align: center;
+}
+
+hanko-profile::part(container) {
+  max-width: none;
 }
