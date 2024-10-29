@@ -1,7 +1,6 @@
 import { ModeToggle } from "@/components/mode-toggle"
 import { Metadata } from "next"
 import Image from "next/image"
-import Stages from "./components/stages"
 import { AuthContextProvider } from "@/contexts/auth"
 import { getUser } from "@/actions/session"
 import { redirect } from "next/navigation"
