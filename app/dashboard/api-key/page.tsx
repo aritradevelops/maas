@@ -40,7 +40,7 @@ export default async function Page() {
           </Card>
         </div>}
         {!!user.keys.length && (
-          <div className="w-full h-30 justify-center items-center flex gap-5">
+          <div className="flex w-full h-30 justify-center items-center flex-col gap-5">
             <RenderSecret secret={user.keys[0]} title="API Key" description="Your secret API key. You will be using this key to interact with our apis." secretName="API key" />
             <RenderSecret secret={user.id} title="Owner Id" description="Owner Id of the meows you will create. This will help you filter meows that you have created." secretName="Owner Id" />
           </div>)}

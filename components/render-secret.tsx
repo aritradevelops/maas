@@ -25,12 +25,12 @@ export default function RenderSecret({ secret, title, description, secretName }:
   }
 
   return (
-    <Card className="w-full h-full max-w-md">
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 max-w-md">
         <div className="relative">
           <Input
             type={isVisible ? "text" : "password"}
