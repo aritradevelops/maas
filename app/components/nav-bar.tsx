@@ -104,7 +104,7 @@ export const Navbar = () => {
                     rel="noreferrer noopener"
                     href="https://demo-8860220f.mintlify.app/"
                     target="_blank"
-                    className={`w-[150px] border ${buttonVariants({ variant: "secondary" })}`}
+                    className={`w-[150px] border ${buttonVariants({ variant: "default" })}`}
                   >
                     <BookOpen className="mr-2 w-5 h-5" />
                     Documentation
@@ -145,7 +145,7 @@ export const Navbar = () => {
               rel="noreferrer noopener"
               href="https://demo-8860220f.mintlify.app/"
               target="_blank"
-              className={`w-[150px] border ${buttonVariants({ variant: "secondary" })}`}
+              className={`w-[150px] border ${buttonVariants({ variant: "default" })}`}
             >
               <BookOpen className="mr-2 w-5 h-5" />
               Documentation
