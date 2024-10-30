@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { rateLimiter, UNKEY_API_ID } from './lib/unkey';
 const module = 'cat'
-const getAction = (method: 'GET' | 'POST' | 'PUT' | 'DELETE', withId = false) => {
+const getAction = (method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH', withId = false) => {
   switch (method) {
     case 'GET':
       return withId ? 'view' : 'list';
@@ -13,6 +13,8 @@ const getAction = (method: 'GET' | 'POST' | 'PUT' | 'DELETE', withId = false) =>
       return 'update';
     case 'DELETE':
       return `delete`;
+    case 'PATCH':
+      return `update`;
     default:
       throw new Error(`Invalid method ${method}`)
   }
