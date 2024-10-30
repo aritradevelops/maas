@@ -5,7 +5,7 @@
     "dark": "/logo/logo.png",
     "light": "/logo/logo.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
@@ -30,7 +30,8 @@
         "create-a-new-cat",
         "get-a-cat-by-id",
         "update-a-meow-by-id",
-        "delete-a-meow-by-id"
+        "delete-a-meow-by-id",
+        "add-an-image-to-a-meow-by-id"
       ]
     }
   ],
