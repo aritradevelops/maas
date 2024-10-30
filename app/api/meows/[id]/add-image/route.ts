@@ -8,10 +8,15 @@ import { randomUUID } from "crypto";
 interface Params {
   id: string;
 }
+
+
 export async function PATCH(req: NextRequest, context: { params: Params }) {
   try {
     const buf = await req.arrayBuffer()
-    const contentType = req.headers.get('content-type') || 'application/octet-stream'
+    const contentType = req.headers.get('content-type')
+    if (!contentType || !contentType.startsWith('image/')) {
+      return NextResponse.json({ error: 'Unsupported Content-Type' }, { status: 415 });
+    }
     if (!buf.byteLength)
       return NextResponse.json({ error: "No files received." }, { status: 400 });
     if (buf.byteLength > 1 * 1024 * 1024)
