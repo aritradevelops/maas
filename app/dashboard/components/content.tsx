@@ -37,7 +37,7 @@ const data = {
     },
     {
       title: "Documentation",
-      url: "/dashboard/documentation",
+      url: "https://demo-8860220f.mintlify.app/",
       icon: BookOpen
     },
   ],
