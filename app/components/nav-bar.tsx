@@ -14,7 +14,7 @@ import {
 
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { BookOpen, BookTextIcon, Menu } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 import Image from "next/image";
 
@@ -102,6 +102,15 @@ export const Navbar = () => {
                   ))}
                   <a
                     rel="noreferrer noopener"
+                    href="https://demo-8860220f.mintlify.app/"
+                    target="_blank"
+                    className={`w-[150px] border ${buttonVariants({ variant: "secondary" })}`}
+                  >
+                    <BookOpen className="mr-2 w-5 h-5" />
+                    Documentation
+                  </a>
+                  <a
+                    rel="noreferrer noopener"
                     href="https://github.com/aritradevelops/maas.git"
                     target="_blank"
                     className={`w-[110px] border ${buttonVariants({
@@ -131,8 +140,16 @@ export const Navbar = () => {
               </a>
             ))}
           </nav>
-
           <div className="hidden md:flex gap-2">
+            <a
+              rel="noreferrer noopener"
+              href="https://demo-8860220f.mintlify.app/"
+              target="_blank"
+              className={`w-[150px] border ${buttonVariants({ variant: "secondary" })}`}
+            >
+              <BookOpen className="mr-2 w-5 h-5" />
+              Documentation
+            </a>
             <a
               rel="noreferrer noopener"
               href="https://github.com/aritradevelops/maas.git"
