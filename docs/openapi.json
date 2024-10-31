@@ -286,7 +286,8 @@
                   },
                   "image": {
                     "type": "string",
-                    "description": "Image url of the cat. we will support uploading images in future versions"
+                    "description": "Image url of the cat. you can also upload a image of a cat see the /add-image api.",
+                    "nullable": true
                   },
                   "personality": {
                     "$ref": "#/components/schemas/Personality"

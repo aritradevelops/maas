@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Hanko } from "@teamhanko/hanko-elements";
 import { Button } from "./ui/button";
+import { LogOut } from "lucide-react";
 
 const hankoApi = process.env.NEXT_PUBLIC_HANKO_API_URL;
 
@@ -24,5 +25,5 @@ export default function HankoLogOutButton() {
     }
   };
 
-  return <Button onClick={logout} className="w-full" >Log Out</Button>;
+  return <Button onClick={logout} className="w-full" > <LogOut /> Log Out</Button>;
 }
