@@ -8,7 +8,7 @@ export default function ResponsiveGallery({ cats }: { cats: Cat[] }) {
       {cats.map(({ image, name }, idx) => {
 
         return (
-          <div className='rounded-md border-slate-800 overflow-hidden cursor-pointer'>
+          <div className='flex justify-center items-center rounded-md border-slate-800 overflow-hidden cursor-pointer my-3'>
             <img src={image!} alt={name} className='aspect-auto rounded-lg hover:scale-[110%] transform transition-transform duration-300' />
           </div>
         )
